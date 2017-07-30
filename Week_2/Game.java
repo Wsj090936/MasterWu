@@ -12,6 +12,7 @@ public class Game {
 	Random random = new Random();
 	private int count = 0;
 	List<Integer> list = new ArrayList<>();//用于存放猜测记录的动态数组
+	Game(){}
 	@Test
 	public void start(){
 		Scanner scanner = new Scanner(System.in);
