@@ -10,8 +10,12 @@ import java.util.Scanner;
 import org.junit.Test;
 
 public class Client {
+	public static void main(String[] args) {//先启动Server，再启动Client
+		Client client = new Client();
+		client.start();
+	}
 	@Test
-	public void start(){
+	public void start(){//启动客户端
 		try {
 			Socket socket = new Socket("localhost",9090);
 			DataInputStream dis = new DataInputStream(socket.getInputStream());//接收来自服务器的消息的数据输入流

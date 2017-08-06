@@ -10,7 +10,11 @@ import java.util.Scanner;
 import org.junit.Test;
 
 public class Server {
-	@Test
+	public static void main(String[] args) {//先启动服务器
+		Server server = new Server();
+		server.start();
+
+	}
 	public void start(){
 		try {
 			ServerSocket ss = new ServerSocket(9090);//设置端口号为9090
@@ -48,6 +52,7 @@ public class Server {
 			try {
 				while((str = dis.readUTF()) != null){
 					System.out.println("来自客户" + socket.getLocalAddress().getHostName() + "的消息:"+str);
+					System.out.print("回复:");
 					String replay = scanner.nextLine();//回复消息
 					dos.writeUTF(replay);
 				}
